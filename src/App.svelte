@@ -1,3 +1,7 @@
+<script>
+    import { notes } from "./stores";
+</script>
+
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
     header h1 {
@@ -12,3 +16,9 @@
         Notes
     </h1>
 </header>
+
+<main>
+    {#each $notes as note}
+        <!-- TODO: Implement Note Component-->
+    {/each}
+</main>
