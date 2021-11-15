@@ -1,4 +1,6 @@
 <script>
+    import Note from "./Note.svelte";
+    
     import { notes } from "./stores";
 </script>
 
@@ -9,6 +11,12 @@
         font-size: 4em;
         text-align: center;
     }
+
+    .notes {
+        display: grid;
+        grid-gap: 1em;
+        grid-template-columns: repeat(4, 1fr);
+    }
 </style>
 
 <header>
@@ -18,7 +26,9 @@
 </header>
 
 <main>
-    {#each $notes as note}
-        <!-- TODO: Implement Note Component-->
-    {/each}
+    <section class="notes">
+        {#each $notes as note}
+            <Note />
+        {/each}
+    </section>
 </main>
