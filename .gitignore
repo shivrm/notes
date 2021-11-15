@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+web_modules/
+
+# Hidden files
+.*
+!/.gitignore
+
+# Build files
+/public
+package-lock.json
