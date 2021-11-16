@@ -1,5 +1,6 @@
 <script>
     import Note from "./Note.svelte";
+    import Menu from "./Menu.svelte"
     
     import { notes } from "./stores";
 </script>
@@ -32,3 +33,5 @@
         {/each}
     </section>
 </main>
+
+<Menu />
