@@ -21,7 +21,7 @@
         place-items: center;
     }
 
-    @media (max-width: 1000px) {
+    @media (max-aspect-ratio: 13/16) {
         .notes {
             grid-template-columns: 1fr;
         }
