@@ -8,3 +8,14 @@ export const notes = writable([
     {'content': "Note 5"},
     {'content': "Note 6"}
 ])
+
+var notesArr;
+notes.subscribe((value) => {
+    notesArr = value;
+});
+
+export function deleteNote(index) {
+    var notesCopy = notesArr;
+    notesCopy.splice(index, 1)
+    notes.set(notesCopy)
+}

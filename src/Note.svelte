@@ -1,5 +1,10 @@
 <script>
+    import { deleteNote } from "./stores"
+
     export let content;
+    export let index;
+
+    var deleteSelf = () => deleteNote(index)
 </script>
 
 <style>
