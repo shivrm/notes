@@ -3,7 +3,7 @@
     import NoteEditor from "./NoteEditor.svelte";
     import Menu from "./Menu.svelte";
     
-    import { notes } from "./stores";
+    import { notes, appState } from "./stores";
 </script>
 
 <style>
@@ -53,5 +53,7 @@
     </section>
 </main>
 
-<NoteEditor />
+{#if $appState.editorOpen}
+    <NoteEditor />
+{/if}
 <Menu />

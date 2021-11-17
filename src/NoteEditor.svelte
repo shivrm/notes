@@ -1,3 +1,21 @@
+<script>
+    import { addNote, appState } from "./stores";
+
+    var backgroundClick = (e) => (e.target == e.currentTarget)? closeEditor(): undefined;
+    var closeEditor = () => $appState.editorOpen = false;
+
+    function submit() {
+        var textbox = document.getElementById("note-text");
+        
+        if (!textbox.value) return;
+        addNote({
+            content: textbox.value
+        });
+        
+        closeEditor();
+    }
+</script>
+
 <style>
     .note-editor-container {
         /* Make the element fixed at top right corner, and occupy the
@@ -109,12 +127,12 @@
     }
 </style>
 
-<section class="note-editor-container">
+<section class="note-editor-container" on:click={backgroundClick}>
     <article class="note">
         <ul class="toolbar">
         </ul>
         <div class="body">
-            <textarea id="note-text" cols="30" rows="10"></textarea>
+            <textarea id="note-text" cols="30" rows="10" placeholder="Put some text here"></textarea>
         </div>
     </article>
     <button class="action" on:click={submit}>
