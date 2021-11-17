@@ -1,49 +1,74 @@
 <style>
     nav {
+        /* Makes the element fixed at the bottom right of the screen
+         * with a gap between the element and the right edge
+         */
         position: fixed;
         bottom: 0;
         right: 0.5em;
     }
 
     .nav-list {
+        /* Makes the element a vertical flexbox */
         display: flex;
         flex-direction: column;
     }
 
     .nav-element {
+        /* Makes the element square in shape */
         height: 60px;
         width: 60px;
+
+        /* Remove list bullets from the element */
         list-style-type: none;
+        
+        /* Adds a small margin under the element */
         margin-bottom: 0.5em;
     }
 
     .nav-element button {
-        background-color: #397eff;
+        /* Gives the element fully rounded corners, making it a circle */
         border-radius: 50%;
+        
+        /* Center the element's children vertically and horizontally */
         display: flex;
         align-items: center;
         justify-content: center;
+        
+        /* Make the element occupy all of its parent */
         height: 100%;
         width: 100%;
-        outline: 0;
         
+        /* Removes the default button outline */
+        outline: 0;
+        border: none;
+
+        /* Gives the element a bckground color */
+        background-color: #397eff;
+        
+        /* Makes the element take some time to transition */
         transition: 0.2s;
     }
 
     .nav-element button svg {
-        color: white;
+        /* Makes the element occupy 90% of its parent */
         height: 90%;
+        
+        /* Gives the icon a white color */
+        color: white;
 
+        /* Makes the element take some time to transition */
         transition: 0.2s;
     }
     .nav-element button:hover {
+        /* Slightly enlarges the button when hovered over */
         transform: scale(1.1);
     }
 
     .nav-element button:hover svg {
+        /* Makes the icon rotate when its parent is hovered */
         transform: rotate(90deg);
     }
-
 </style>
 
 <nav>

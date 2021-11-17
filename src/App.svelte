@@ -9,20 +9,31 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
     header h1 {
+        /* Sets a thin, sans-serif font to the heading to make
+         * it appear modern
+         */
         font-family: 'Poppins', sans-serif;
         font-size: 4em;
+        
+        /* Aligns heading text to the center */
         text-align: center;
     }
 
     .notes {
+        /* Makes the element a grid with four columns */
         display: grid;
-        grid-gap: 1em;
         grid-template-columns: repeat(4, 1fr);
+        
+        /* Adds a gap between child elements */
+        grid-gap: 1em;
+
+        /* Place children in the middle of the grid */
         place-items: center;
     }
 
     @media (max-aspect-ratio: 13/16) {
         .notes {
+            /* Set number of columns to one on vertical displays */
             grid-template-columns: 1fr;
         }
     }

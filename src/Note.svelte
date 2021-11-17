@@ -9,50 +9,100 @@
 
 <style>
     .note {
+        /* Gives the element rounded corners */
         border-radius: 1.5em;
+        
+        /* Makes the element a vertical flexbox to help position
+         * its chidren properly
+         */
         display: flex;
         flex-direction: column;
+       
+        /* Sets the dimensions of the element */
         height: 23em;
         width: 18em;
+
+        /* Sets the padding of the element to 0 in order to allow
+         * child elements to fit inside it without any gaps
+         * surrounding it.
+         */
         padding: 0;
     }
 
     .toolbar {
-        background-color: #f8fa6f;
+        /* Gives the element rounded corners */
         border-radius: 1.5em 1.5em 0 0;
+        
+        /* Makes the elemnt a flexbox, centers the children vertically
+         * and places them at the right end of the parent
+         */
         display: flex;
         align-items: center;
         justify-content: end;
+
+        /* Makes the element occupy 20% of its parent vertically */
         height: 20%;
+
+        /* Gives the element 0 margin to make it fit in parent without
+         * any gaps, and 0 vertical padding. 1em horizontal padding is
+         * given to pad toolbar items
+         */
         margin: 0;
         padding: 0 1em;
+        
+        /* Sets the element's background color */
+        background-color: #f8fa6f;
     }
     .toolbar-item {
+        /* Removes list bullets from the element */
         list-style-type: none;
+
+        /* Sets the element's height */
         height: 50%;
-        
     }    
 
     .toolbar-item svg {
+        /* Makes the element occupy all space available inside parnet */
         min-height: 100%;
+
+        /* Makes the element take some time to transition */
         transition: 0.1s;
     }
 
     .toolbar-item:hover svg {
+        /* Scale the element slightly when hovered over */
         transform: scale(1.1);
     }
 
     .body {
-        background-color: #f8fa8b;
+        /* Gives the element rounded corners */ 
         border-radius: 0 0 1.5em 1.5em;
+        
+        /* Makes the element occupy all available space in the parent */
         flex: 1;
+        
+        /* Sets the element's height */
         height: 60%;
+        
+        /* Give the element some padding, but no margin to make it fit
+         * inside the parent element without any gaps
+         */
         padding: 1.2em;
         margin: 0;
+        
+        /* Gives the element a background color */
+        background-color: #f8fa8b;
     }
 
     .content {
+        /* Makes the element take up all horizontal space inside
+         * its parent
+         */
         height: 100%;
+
+        /* Adds a scrollbar to the element when the content doesn't
+         * fit inside it
+         */
         overflow-y: scroll;
     }
 </style>
