@@ -25,3 +25,7 @@ export function deleteNote(index) {
     notesCopy.splice(index, 1)
     notes.set(notesCopy)
 }
+
+export const appState = writable({
+    editorOpen: false
+})

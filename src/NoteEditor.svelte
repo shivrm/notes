@@ -117,7 +117,7 @@
             <textarea id="note-text" cols="30" rows="10"></textarea>
         </div>
     </article>
-    <button class="action">
+    <button class="action" on:click={submit}>
         Add Note
     </button>
 </section>
