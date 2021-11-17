@@ -14,6 +14,12 @@ notes.subscribe((value) => {
     notesArr = value;
 });
 
+export function addNote(noteData) {
+    var notesCopy = notesArr;
+    notesCopy.push(noteData);
+    notes.set(notesCopy);
+}
+
 export function deleteNote(index) {
     var notesCopy = notesArr;
     notesCopy.splice(index, 1)
