@@ -37,6 +37,15 @@
             grid-template-columns: 1fr;
         }
     }
+
+    .no-notes {
+        grid-column: 1 / -1;
+        text-align: center;
+        
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 3em;
+    }
 </style>
 
 <header>
@@ -50,6 +59,9 @@
         {#each $notes as note, index}
             <Note {...note} {index}/>
         {/each}
+        {#if !$notes.length}
+            <h1 class="no-notes">Click on the + to create a note</h1>
+        {/if}
     </section>
 </main>
 
