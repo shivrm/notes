@@ -81,6 +81,8 @@
         */
         height: 100%;
         
+        word-wrap: break-word;
+        
         /* Adds a scrollbar to the element when the content doesn't
         * fit inside it
         */
