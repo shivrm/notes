@@ -4,6 +4,8 @@
     import Menu from "./Menu.svelte";
     
     import { notes, appState } from "./stores";
+
+    import { flip } from "svelte/animate";
 </script>
 
 <style>
@@ -56,8 +58,10 @@
 
 <main>
     <section class="notes">
-        {#each $notes as note, index}
-            <Note {...note} {index}/>
+        {#each $notes as note, index (note.id)}
+            <article animate:flip="{{duration: 250}}">
+                <Note {...note} {index}/>
+            </article>
         {/each}
         {#if !$notes.length}
             <h1 class="no-notes">Click on the + to create a note</h1>
