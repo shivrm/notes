@@ -67,5 +67,6 @@
 
 {#if $appState.editorOpen}
     <NoteEditor />
+{:else}
+    <Menu />
 {/if}
-<Menu />
