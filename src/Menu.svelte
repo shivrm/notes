@@ -24,14 +24,21 @@
 
     .nav-element {
         /* Makes the element square in shape */
-        height: 60px;
-        width: 60px;
+        height: 5vw;
+        width: 5vw;
 
         /* Remove list bullets from the element */
         list-style-type: none;
         
         /* Adds a small margin under the element */
         margin-bottom: 0.5em;
+    }
+
+    @media (max-aspect-ratio: 13/16) {
+        .nav-element {
+            height: 15vw;
+            width: 15vw;
+        }
     }
 
     .nav-element button {
