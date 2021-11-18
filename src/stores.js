@@ -1,5 +1,9 @@
 import { writable } from "svelte/store";
 
+const uid = function(){
+    return Date.now().toString(36) + Math.random().toString(36).substr(2);
+}
+
 var storedNotes = JSON.parse(
     localStorage.getItem('notes')
 ) || []
@@ -17,6 +21,8 @@ notes.subscribe((value) => {
 });
 
 export function addNote(noteData) {
+    noteData.id = uid()
+    
     var notesCopy = notesArr;
     notesCopy.push(noteData);
     notes.set(notesCopy);
