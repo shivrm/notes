@@ -47,6 +47,8 @@
         font-family: 'Poppins', sans-serif;
         font-weight: 700;
         font-size: 3em;
+
+        color: #b9b9b9;
     }
 </style>
 
