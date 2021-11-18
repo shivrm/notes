@@ -1,6 +1,8 @@
 <script>
     import { addNote, appState } from "./stores";
 
+    import { fade } from "svelte/transition";
+
     var backgroundClick = (e) => (e.target == e.currentTarget)? closeEditor(): undefined;
     var closeEditor = () => $appState.editorOpen = false;
 
@@ -127,7 +129,10 @@
     }
 </style>
 
-<section class="note-editor-container" on:click={backgroundClick}>
+<section class="note-editor-container"
+    on:click={backgroundClick}
+    transition:fade="{{duration: 100}}"
+    >
     <article class="note">
         <ul class="toolbar">
         </ul>
