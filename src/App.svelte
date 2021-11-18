@@ -50,6 +50,27 @@
 
         color: #b9b9b9;
     }
+
+    .note {
+        /* Gives the element rounded corners */
+        border-radius: 1.5em;
+        
+        /* Makes the element a vertical flexbox to help position
+        * its chidren properly
+        */
+        display: flex;
+        flex-direction: column;
+        
+        /* Sets the dimensions of the element */
+        height: 23em;
+        width: 18em;
+        
+        /* Sets the padding of the element to 0 in order to allow
+        * child elements to fit inside it without any gaps
+        * surrounding it.
+        */
+        padding: 0;
+    }
 </style>
 
 <header>
@@ -61,7 +82,7 @@
 <main>
     <section class="notes">
         {#each $notes as note, index (note.id)}
-            <article animate:flip="{{duration: 250}}">
+            <article class="note" animate:flip="{{duration: 250}}">
                 <Note {...note} {index}/>
             </article>
         {/each}
