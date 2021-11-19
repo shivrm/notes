@@ -27,6 +27,7 @@ notes.subscribe((value) => {
     notesArr = value;
 });
 
+// Function which returns the note that is currently being edited 
 export var getEditNote = () => notesArr[get(appState).editNoteIndex]
 
 // Function to add a new note
@@ -45,18 +46,23 @@ export function deleteNote(index) {
     notes.set(notesCopy) // Sets the store to the new value
 }
 
+/* Overrides the properties of the note currently being edited,
+ * given a object containing properties to override
+ */
 export function editNote(newProps) {
+    // Variable that stores the index of the note being edited
     var index = get(appState).editNoteIndex
     
-    var notesCopy = notesArr;
-    var note = notesArr[index];
+    var notesCopy = notesArr;   // Create a copy of the notes
+    var note = notesArr[index]; // The note being edited
 
+    // Override the old props of the note with the new props
     notesCopy[index] = {...note, ...newProps}
-    notes.set(notesCopy)
+    notes.set(notesCopy) // Set the store to the new value
 }
 
 // Variable that stores the current state of the app
 export const appState = writable({
-    editorOpen: false,
-    editNoteIndex: undefined
+    editorOpen: false,          // If the note editor is open
+    editNoteIndex: undefined    // The index of the note being edited
 })
