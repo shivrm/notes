@@ -24,8 +24,8 @@
 
     .nav-element {
         /* Makes the element square in shape */
-        height: max(5vw, 10vh);
-        width: max(5vw, 10vh);
+        height: max(4vw, 8vh);
+        width: max(4vw, 8vh);
 
         /* Remove list bullets from the element */
         list-style-type: none;
