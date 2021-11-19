@@ -151,6 +151,13 @@
         /* Gives some margin and padding to the element */
         margin: 2em;
         padding: 1em 3em;
+
+        transition: 0.2s;
+    }
+
+    .action:hover {
+        color: #a9a9a9;
+        transform: scale(1.1);
     }
 </style>
 
