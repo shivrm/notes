@@ -1,12 +1,17 @@
 <script>
-    import { deleteNote } from "./stores"
+    import { deleteNote, appState } from "./stores"
     
     import { fade } from "svelte/transition";
     
     export let content;
     export let index;
     
-    var deleteSelf = () => deleteNote(index)
+    var deleteSelf = () => deleteNote(index);
+
+    function openInEditor() {
+        $appState.editNoteIndex = index;
+        $appState.editorOpen = true;
+    }
 </script>
 
 <style>
