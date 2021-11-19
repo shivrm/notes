@@ -1,4 +1,4 @@
-import { writable } from "svelte/store";
+import { writable, get } from "svelte/store";
 
 // Creates a unique id for each note
 const uid = function(){
@@ -27,6 +27,8 @@ notes.subscribe((value) => {
     notesArr = value;
 });
 
+export var getEditNote = () => notesArr[get(appState).editNoteIndex]
+
 // Function to add a new note
 export function addNote(noteData) {
     noteData.id = uid() // Generate an ID for the note
@@ -43,7 +45,18 @@ export function deleteNote(index) {
     notes.set(notesCopy) // Sets the store to the new value
 }
 
+export function editNote(newProps) {
+    var index = get(appState).editNoteIndex
+    
+    var notesCopy = notesArr;
+    var note = notesArr[index];
+
+    notesCopy[index] = {...note, ...newProps}
+    notes.set(notesCopy)
+}
+
 // Variable that stores the current state of the app
 export const appState = writable({
-    editorOpen: false
+    editorOpen: false,
+    editNoteIndex: undefined
 })
