@@ -18,6 +18,8 @@
     function finishEdit() {
         var textbox = document.getElementById("note-text")
         
+        if (!textbox.value) return;
+
         editNote({
             content: textbox.value
         })
