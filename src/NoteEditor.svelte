@@ -1,7 +1,30 @@
 <script>
-    import { addNote, appState } from "./stores";
+    import { addNote, appState, getEditNote, editNote } from "./stores";
 
+    import { onMount } from "svelte";
     import { fade } from "svelte/transition";
+
+    var edit = false;
+    onMount(async () => {
+        if ($appState.editNoteIndex !== undefined) {
+            var textbox = document.getElementById("note-text");
+            var note = getEditNote();
+
+            textbox.value = note.content
+            edit = true;
+        }
+    })
+
+    function finishEdit() {
+        var textbox = document.getElementById("note-text")
+        
+        editNote({
+            content: textbox.value
+        })
+
+        $appState.editNoteIndex = undefined;
+        closeEditor()
+    }
 
     var backgroundClick = (e) => (e.target == e.currentTarget)? closeEditor(): undefined;
     var closeEditor = () => $appState.editorOpen = false;
@@ -140,7 +163,10 @@
             <textarea id="note-text" cols="30" rows="10" placeholder="Put some text here"></textarea>
         </div>
     </article>
-    <button class="action" on:click={submit}>
-        Add Note
-    </button>
+
+    {#if !edit}
+        <button class="action" on:click={submit}>Add Note</button>
+    {:else}
+        <button class="action" on:click={finishEdit}>Edit Note</button>    
+    {/if}
 </section>
