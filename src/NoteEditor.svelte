@@ -41,6 +41,12 @@
         
         closeEditor();
     }
+
+    function checkEscape(event) {
+        if (event.key == "Escape") {
+            closeEditor()
+        }
+    }
 </script>
 
 <style>
@@ -160,6 +166,8 @@
         transform: scale(1.1);
     }
 </style>
+
+<svelte:window on:keydown={checkEscape} />
 
 <section class="note-editor-container"
     on:click={backgroundClick}
