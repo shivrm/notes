@@ -1,5 +1,7 @@
 /node_modules
-package_lock.json
+package-lock.json
 
 .*
 !/.gitignore
+
+/public
