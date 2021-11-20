@@ -1,6 +1,7 @@
 <script>
     import { deleteNote, appState } from "./stores"
-    
+    import { markdown } from "./markdown";
+
     import { fade } from "svelte/transition";
     
     export let content;
@@ -108,6 +109,6 @@
 </ul>
 <div class="body">
     <div class="content">
-        {content}
+        {@html markdown(content)}
     </div>
 </div>
