@@ -169,7 +169,7 @@
         <ul class="toolbar">
         </ul>
         <div class="body">
-            <textarea id="note-text" cols="30" rows="10" placeholder="Put some text here"></textarea>
+            <textarea id="note-text" cols="30" rows="10" placeholder="Put some text (or markdown) here"></textarea>
         </div>
     </article>
 
