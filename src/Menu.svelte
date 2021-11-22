@@ -37,8 +37,8 @@
 
     @media (max-aspect-ratio: 13/16) {
         .nav-element {
-            height: max(15vw, 10vh);
-            width: max(15vw, 10vh);
+            height: max(12vw, 8vh);
+            width: max(15vw, 8vh);
         }
     }
 
