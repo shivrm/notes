@@ -72,6 +72,17 @@
         */
         padding: 0;
     }
+
+    .overlay {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+
+        height: 7vh;
+        width: 100%;
+
+        background: linear-gradient(transparent, white);
+    }
 </style>
 
 <header>
@@ -92,6 +103,9 @@
         {/if}
     </section>
 </main>
+
+<div class="overlay">
+</div>
 
 {#if $appState.editorOpen}
     <NoteEditor />
