@@ -1,6 +1,6 @@
 <script>
     import { appState } from "./stores";
-    
+
     var closeMenu = () => $appState.optionsOpen = false;
 </script>
 
@@ -11,25 +11,37 @@
         left: 0;
         width: 100%;
         height: 50%;
+
+        background-color: turquoise;
     }
 </style>
 
 <div class="options-menu">
     <ul class="options-list">
         <li on:click={closeMenu}>
-            Close List
+            <button>
+                Close List
+            </button>
         </li>
         <li>
-            Change Default Note Color
+            <button>
+                Change Note Color
+            </button>
         </li>
         <li>
-            Change Theme
+            <button>
+                Change Theme
+            </button>
         </li>
         <li>
-            Export as JSON
+            <button>
+                Export As JSON
+            </button>
         </li>
         <li>
-            Import as JSON
+            <button>
+                Import JSON
+            </button>
         </li>
     </ul>
 </div>
