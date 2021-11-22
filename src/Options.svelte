@@ -1,47 +1,76 @@
 <script>
     import { appState } from "./stores";
 
+    import { fly } from "svelte/transition";
+
     var closeMenu = () => $appState.optionsOpen = false;
 </script>
 
 <style>
     .options-menu {
-        position: absolute;
+        position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
         height: 50%;
 
-        background-color: turquoise;
+        background-color: #397eff;
+    }
+
+    .options-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        
+        grid-gap: 2em 0em;
+
+        padding: 1em 10%;
+    }
+
+    .option {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .option button {
+        height: 8vh;
+        width: 8vh;
+    }
+
+    .option span {
+        text-align: center;
+        font-size: 1em;
+
+        height: 20%;
     }
 </style>
 
-<div class="options-menu">
+<div class="options-menu" transition:fly="{{y: 1000}}">
     <ul class="options-list">
-        <li on:click={closeMenu}>
+        <li class="option">
             <button>
-                Close List
             </button>
+            <span>Change Theme</span>
         </li>
-        <li>
+        <li class="option">
             <button>
-                Change Note Color
             </button>
+            <span>Default Note Color</span>
         </li>
-        <li>
-            <button>
-                Change Theme
-            </button>
+        <li class="option" on:click={closeMenu}>
+            <button></button>
+            <span>Close Menu</span>
         </li>
-        <li>
+        <li class="option">
             <button>
-                Export As JSON
             </button>
+            <span>Export As JSON</span>
         </li>
-        <li>
+        <li class="option">
             <button>
-                Import JSON
             </button>
+            <span>Import JSON</span>
         </li>
     </ul>
 </div>
