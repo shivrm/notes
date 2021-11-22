@@ -23,6 +23,19 @@
         flex-direction: column;
     }
 
+    @media (max-aspect-ratio: 13/16) {
+        nav {
+            right: unset;
+            width: 100%;
+        }
+
+        .nav-list {
+            padding: 0;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: center;
+        }
+    }
     .nav-element {
         /* Makes the element square in shape */
         height: max(4vw, 8vh);
@@ -37,6 +50,8 @@
 
     @media (max-aspect-ratio: 13/16) {
         .nav-element {
+            margin: 0.25em;
+
             height: max(12vw, 8vh);
             width: max(15vw, 8vh);
         }
