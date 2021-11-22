@@ -64,5 +64,7 @@ export function editNote(newProps) {
 // Variable that stores the current state of the app
 export const appState = writable({
     editorOpen: false,          // If the note editor is open
-    editNoteIndex: undefined    // The index of the note being edited
+    editNoteIndex: undefined,   // The index of the note being edited
+
+    optionsOpen: false
 })
