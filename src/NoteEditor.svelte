@@ -145,6 +145,8 @@
         background: transparent;
         outline: none;
         border: none;
+        
+        resize: none;
     }
 
     .action {

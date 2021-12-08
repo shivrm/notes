@@ -22,7 +22,7 @@
         place-items: center;
         grid-template-columns: repeat(3, 1fr);
         
-        grid-gap: 0em 0em;
+        grid-gap: 1em 1em;
 
         padding: 1em 10vw;
     }
