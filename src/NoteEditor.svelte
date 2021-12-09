@@ -12,6 +12,9 @@
             var note = getEditNote();
 
             textbox.value = note.content
+            selectedColor = note.color
+            selectedFont = note.font
+            
             edit = true;
         }
     })
