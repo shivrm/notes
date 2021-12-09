@@ -57,9 +57,12 @@
     function setNoteColor(index) {
         selectedColor = index
     }
-</script>
 
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script&family=Fuzzy+Bubbles&family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
+    function setFontStyle(index) {
+        selectedFont = index
+    }
+
+</script>
 
 <style>
 
@@ -188,16 +191,12 @@
         transition: 0.1s;
     }
 
-    .color.selected {
-        border-radius: 1em;
-    }
-
     .fonts {
         padding: 1em;
         margin: 0;
 
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
 
         grid-gap: 3em;
     }
@@ -223,6 +222,10 @@
     .font span {
         font-family: var(--font-style);
         font-size: 1.5em;
+    }
+
+    .selected {
+        border-radius: 1em;
     }
 
     #note-text {
@@ -272,8 +275,10 @@
         on:click={backgroundClick}
         >
             <ul class="fonts">
-                {#each fontStyles as font}
-                    <li class="font">
+                {#each fontStyles as font, index}
+                    <li class="font"
+                    class:selected={index == selectedFont}
+                    on:click={() => setFontStyle(index)}>
                         <span style="--font-style: {font}">Aa</span>
                     </li>
                 {/each}
@@ -284,7 +289,7 @@
             <ul class="toolbar">
             </ul>
             <div class="body">
-                <textarea id="note-text" cols="30" rows="10" placeholder="Put some text (or markdown) here"></textarea>
+                <textarea id="note-text" cols="30" rows="10" placeholder="Text / Markdown"></textarea>
             </div>
         </article>
 
