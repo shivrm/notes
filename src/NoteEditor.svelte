@@ -23,7 +23,8 @@
 
         editNote({
             content: textbox.value,
-            color: selectedColor
+            color: selectedColor,
+            font: selectedFont
         })
 
         $appState.editNoteIndex = undefined;
@@ -39,7 +40,8 @@
         if (!textbox.value) return;
         addNote({
             content: textbox.value,
-            color: selectedColor
+            color: selectedColor,
+            font: selectedFont
         });
         
         closeEditor();
