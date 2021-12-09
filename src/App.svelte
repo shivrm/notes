@@ -9,6 +9,8 @@
     import { flip } from "svelte/animate";
 </script>
 
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script&family=Fuzzy+Bubbles&family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
+
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
     header h1 {
