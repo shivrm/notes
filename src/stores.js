@@ -71,6 +71,14 @@ export const noteColors = [
     '#FF8787'
 ]
 
+export const fontStyles = [
+    'Roboto',
+    'Fuzzy Bubbles',
+    'Roboto Mono',
+    'Dancing Script',
+    'Anton'
+]
+
 // Variable that stores the current state of the app
 export const appState = writable({
     editorOpen: false,          // If the note editor is open

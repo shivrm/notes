@@ -1,5 +1,6 @@
 <script>
-    import { addNote, appState, getEditNote, editNote, noteColors } from "./stores";
+    import { addNote, appState, getEditNote,
+             editNote, noteColors, fontStyles } from "./stores";
 
     import { onMount } from "svelte";
     import { fade } from "svelte/transition";
@@ -51,13 +52,17 @@
     }
 
     var selectedColor = 0
+    var selectedFont = 0
 
     function setNoteColor(index) {
         selectedColor = index
     }
 </script>
 
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script&family=Fuzzy+Bubbles&family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
+
 <style>
+
     .note-editor-container {
         /* Make the element fixed at top right corner, and occupy the
          * whole screen, to serve as the background for the modal
@@ -153,7 +158,7 @@
         background-color: var(--note-color);
     }
 
-    .color-picker {
+    .picker {
         display: flex;
         align-items: flex-start;
         justify-content: center;
@@ -186,6 +191,40 @@
     .color.selected {
         border-radius: 1em;
     }
+
+    .fonts {
+        padding: 1em;
+        margin: 0;
+
+        display: grid;
+        grid-template-columns: 1fr;
+
+        grid-gap: 3em;
+    }
+
+    .font {
+        list-style-type: none;
+
+        margin: 0;
+
+        width: 3em;
+        height: 3em;
+
+        border-radius: 4em;
+
+        transition: 0.1s;
+
+        background-color: var(--note-color);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .font span {
+        font-family: var(--font-style);
+        font-size: 1.5em;
+    }
+
     #note-text {
         /* Make the element transparent by removing the default border
          * and outline, and setting a transparent background
@@ -195,6 +234,7 @@
         border: none;
         
         resize: none;
+        font-family: var(--font-style);
     }
 
     .action {
@@ -225,12 +265,19 @@
     >
     
     <section class="editor-main"
-    style="--note-color: {noteColors[selectedColor]}"
+    style="--note-color: {noteColors[selectedColor]};
+           --font-style: {fontStyles[selectedFont]}"
     >
-        <article class="font-picker"
+        <article class="picker"
         on:click={backgroundClick}
         >
-            
+            <ul class="fonts">
+                {#each fontStyles as font}
+                    <li class="font">
+                        <span style="--font-style: {font}">Aa</span>
+                    </li>
+                {/each}
+            </ul>
         </article>
 
         <article class="note">
@@ -241,7 +288,7 @@
             </div>
         </article>
 
-        <article class="color-picker"
+        <article class="picker"
         on:click={backgroundClick}
         >
             <ul class="colors">

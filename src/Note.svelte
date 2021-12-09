@@ -1,5 +1,5 @@
 <script>
-    import { deleteNote, appState, noteColors } from "./stores"
+    import { deleteNote, appState, noteColors, fontStyles } from "./stores"
     import { markdown } from "./markdown";
 
     import { fade } from "svelte/transition";
@@ -17,6 +17,7 @@
 </script>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Corinthia&family=Fuzzy+Bubbles&family=Roboto&family=Roboto+Mono&display=swap');
 
     .container {
         margin: 0;
