@@ -61,6 +61,16 @@ export function editNote(newProps) {
     notes.set(notesCopy) // Set the store to the new value
 }
 
+export const noteColors = [
+    '#FBFF90',
+    '#FFC57E',
+    '#A6FF95',
+    '#74F3FF',
+    '#9D8BFF',
+    '#FF9EFF',
+    '#FF8787'
+]
+
 // Variable that stores the current state of the app
 export const appState = writable({
     editorOpen: false,          // If the note editor is open

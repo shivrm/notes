@@ -1,5 +1,5 @@
 <script>
-    import { addNote, appState, getEditNote, editNote } from "./stores";
+    import { addNote, appState, getEditNote, editNote, noteColors } from "./stores";
 
     import { onMount } from "svelte";
     import { fade } from "svelte/transition";
@@ -47,6 +47,12 @@
             closeEditor()
         }
     }
+
+    var selectedColor = 0
+
+    function setNoteColor(index) {
+        selectedColor = index
+    }
 </script>
 
 <style>
@@ -72,6 +78,12 @@
         background: rgba(0, 0, 0, 0.8);
     }
 
+    .editor-main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        
+        grid-gap: 0.5em;
+    }
     .note {
         /* Gives the element rounded corners */
         border-radius: 1.5em;
@@ -91,6 +103,7 @@
          * surrounding it.
          */
         padding: 0;
+        background-color: var(--note-color);
     }
 
     .toolbar {
@@ -115,7 +128,7 @@
         padding: 0 1em;
         
         /* Sets the element's background color */
-        background-color: #f8fa6f;
+        backdrop-filter: brightness(0.8) contrast(1.2);
     }
 
     .body {
@@ -135,9 +148,42 @@
         margin: 0;
         
         /* Gives the element a background color */
-        background-color: #f8fa8b;
+        background-color: var(--note-color);
     }
 
+    .color-picker {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .colors {
+        padding: 1em;
+        margin: 0;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        grid-gap: 3em;
+    }
+
+    .color {
+        list-style-type: none;
+
+        margin: 0;
+
+        width: 3em;
+        height: 3em;
+
+        border-radius: 4em;
+
+        transition: 0.1s;
+    }
+
+    .color.selected {
+        border-radius: 1em;
+    }
     #note-text {
         /* Make the element transparent by removing the default border
          * and outline, and setting a transparent background
@@ -175,13 +221,35 @@
     on:click={backgroundClick}
     transition:fade="{{duration: 100}}"
     >
-    <article class="note">
-        <ul class="toolbar">
-        </ul>
-        <div class="body">
-            <textarea id="note-text" cols="30" rows="10" placeholder="Put some text (or markdown) here"></textarea>
-        </div>
-    </article>
+    
+    <section class="editor-main"
+    style="--note-color: {noteColors[selectedColor]}"
+    >
+        <article class="font-picker">
+            
+        </article>
+
+        <article class="note">
+            <ul class="toolbar">
+            </ul>
+            <div class="body">
+                <textarea id="note-text" cols="30" rows="10" placeholder="Put some text (or markdown) here"></textarea>
+            </div>
+        </article>
+
+        <article class="color-picker">
+            <ul class="colors">
+                {#each noteColors as color, index}
+                    <li 
+                    on:click={() => setNoteColor(index)}
+                    style="background-color: {color}"
+                    class="color"
+                    class:selected={index==selectedColor}>
+                    </li>
+                {/each}
+            </ul>
+        </article>
+    </section>
 
     {#if !edit}
         <button class="action" on:click={submit}>Add Note</button>
