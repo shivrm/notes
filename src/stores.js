@@ -75,7 +75,7 @@ export const fontStyles = [
     'Roboto',
     'Fuzzy Bubbles',
     'Roboto Mono',
-    'Dancing Script',
+    'Bad Script',
     'Anton'
 ]
 
