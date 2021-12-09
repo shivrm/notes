@@ -227,7 +227,9 @@
     <section class="editor-main"
     style="--note-color: {noteColors[selectedColor]}"
     >
-        <article class="font-picker">
+        <article class="font-picker"
+        on:click={backgroundClick}
+        >
             
         </article>
 
@@ -239,7 +241,9 @@
             </div>
         </article>
 
-        <article class="color-picker">
+        <article class="color-picker"
+        on:click={backgroundClick}
+        >
             <ul class="colors">
                 {#each noteColors as color, index}
                     <li 
