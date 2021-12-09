@@ -21,7 +21,8 @@
         if (!textbox.value) return;
 
         editNote({
-            content: textbox.value
+            content: textbox.value,
+            color: selectedColor
         })
 
         $appState.editNoteIndex = undefined;
@@ -36,7 +37,8 @@
         
         if (!textbox.value) return;
         addNote({
-            content: textbox.value
+            content: textbox.value,
+            color: selectedColor
         });
         
         closeEditor();
@@ -128,7 +130,7 @@
         padding: 0 1em;
         
         /* Sets the element's background color */
-        backdrop-filter: brightness(0.8) contrast(1.2);
+        backdrop-filter: brightness(0.85) contrast(1.3);
     }
 
     .body {
