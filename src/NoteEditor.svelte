@@ -99,6 +99,7 @@
         
         grid-gap: 0.5em;
     }
+
     .note {
         /* Gives the element rounded corners */
         border-radius: 1.5em;
@@ -232,6 +233,38 @@
     .selected {
         border-radius: 1em;
     }
+
+    @media (max-aspect-ratio: 13/16) {
+        .editor-main {
+            grid-template-columns: 1fr;
+            place-items: center;
+        }
+
+        .colors {
+            grid-template-columns: repeat(7, 1fr);
+            grid-gap: 0.8em;
+        }
+
+        .color {
+            height: 1.5em;
+            width: 1.5em;
+        }
+
+        .fonts {
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 1em;
+        }
+
+        .font {
+            height: 2em;
+            width: 2em;
+        }
+
+        .font span {
+            font-size: 0.8em;
+        }
+    }
+
 
     #note-text {
         /* Make the element transparent by removing the default border
