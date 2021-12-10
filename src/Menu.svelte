@@ -53,7 +53,7 @@
             margin: 0.25em;
 
             height: max(12vw, 8vh);
-            width: max(15vw, 8vh);
+            width: max(12vw, 8vh);
         }
     }
 
