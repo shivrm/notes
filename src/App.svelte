@@ -50,6 +50,7 @@
         text-align: center;
 
         color: var(--fg-color);
+        transition: 0.3s ease;
     }
 
     .notes {
