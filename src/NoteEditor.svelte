@@ -30,12 +30,14 @@
             font: selectedFont
         })
 
-        $appState.editNoteIndex = undefined;
         closeEditor()
     }
 
     var backgroundClick = (e) => (e.target == e.currentTarget)? closeEditor(): undefined;
-    var closeEditor = () => $appState.editorOpen = false;
+    var closeEditor = () => {
+        $appState.editNoteIndex = undefined;
+        $appState.editorOpen = false;
+    }
 
     function submit() {
         var textbox = document.getElementById("note-text");
