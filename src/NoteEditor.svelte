@@ -280,6 +280,8 @@
         
         resize: none;
         font-family: var(--font-style);
+
+        width: 90%;
     }
 
     .action {
