@@ -6,12 +6,39 @@
     import { notes, appState } from "./stores";
 
     import { flip } from "svelte/animate";
+
+    $: (() => {
+        if ($appState.theme == 'light') {
+            document.body.classList.add('light');
+            document.body.classList.remove('dark');
+        }
+
+        else if ($appState.theme == 'dark') {
+            document.body.classList.add('dark');
+            document.body.classList.remove('light');
+        }
+    })();
+
 </script>
 
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bad+Script&family=Fuzzy+Bubbles&family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+    :global(body.light) {
+        --bg-color: #F7F7F8;
+        --fg-color: #32322C;
+    }
+
+    :global(body.dark) {
+        --bg-color: #32322C;
+        --fg-color: #F7F7F8;
+    }
+
+    :global(body) {
+        background-color: var(--bg-color);
+    }
     header h1 {
         /* Sets a thin, sans-serif font to the heading to make
          * it appear modern
@@ -21,6 +48,8 @@
         
         /* Aligns heading text to the center */
         text-align: center;
+
+        color: var(--fg-color);
     }
 
     .notes {
@@ -82,7 +111,7 @@
         height: 7vh;
         width: 100%;
 
-        background: linear-gradient(transparent, white);
+        background: linear-gradient(transparent, var(--bg-color));
     }
 </style>
 
@@ -105,7 +134,7 @@
     </section>
 </main>
 
-<div class="overlay">
+<div class="overlay {$appState.theme}">
 </div>
 
 {#if $appState.editorOpen}
