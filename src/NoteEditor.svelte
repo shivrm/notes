@@ -120,6 +120,8 @@
          */
         padding: 0;
         background-color: var(--note-color);
+
+        transition: 0.2s ease;
     }
 
     .toolbar {
@@ -165,6 +167,8 @@
         
         /* Gives the element a background color */
         background-color: var(--note-color);
+
+        transition: 0.2s ease;
     }
 
     .picker {
