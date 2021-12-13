@@ -83,6 +83,4 @@ export const fontStyles = [
 export const appState = writable({
     editorOpen: false,          // If the note editor is open
     editNoteIndex: undefined,   // The index of the note being edited
-
-    optionsOpen: false
 })

@@ -2,7 +2,6 @@
     import Note from "./Note.svelte";
     import NoteEditor from "./NoteEditor.svelte";
     import Menu from "./Menu.svelte";
-    import Options from "./Options.svelte";
     
     import { notes, appState } from "./stores";
 
@@ -113,8 +112,4 @@
     <NoteEditor />
 {:else}
     <Menu />
-{/if}
-
-{#if $appState.optionsOpen}
-    <Options />
 {/if}
