@@ -38,6 +38,7 @@
 
     :global(body) {
         background-color: var(--bg-color);
+        transition: 0.1s;
     }
     header h1 {
         /* Sets a thin, sans-serif font to the heading to make
