@@ -7,8 +7,10 @@
 
     var edit = false;
     onMount(async () => {
+        var textbox = document.getElementById("note-text");
+        textbox.focus();
+
         if ($appState.editNoteIndex !== undefined) {
-            var textbox = document.getElementById("note-text");
             var note = getEditNote();
 
             textbox.value = note.content
