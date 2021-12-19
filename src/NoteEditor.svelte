@@ -337,7 +337,7 @@
             <ul class="toolbar">
             </ul>
             <div class="body">
-                <textarea autofocus id="note-text" cols="30" rows="10" placeholder="Text / Markdown"></textarea>
+                <textarea id="note-text" cols="30" rows="10" placeholder="Text / Markdown"></textarea>
             </div>
         </article>
 

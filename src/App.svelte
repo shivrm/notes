@@ -1,3 +1,9 @@
+<svelte:head>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bad+Script&family=Fuzzy+Bubbles&family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    
+</svelte:head>
+
 <script>
     import Note from "./Note.svelte";
     import NoteEditor from "./NoteEditor.svelte";
@@ -20,8 +26,6 @@
     })();
 
 </script>
-
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bad+Script&family=Fuzzy+Bubbles&family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
