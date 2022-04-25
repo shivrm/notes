@@ -2,7 +2,7 @@
 
 A web app made with Svelte that allows you to create notes
 
-Want to suggest a feature or report a bug? Click [here](https://github.com/shivrm/svelte-notes/issues/new).
+Want to suggest a feature or report a bug? Click [here](https://github.com/shivrm/notes/issues/new).
 
 ## Features
  - [x] Allows the user to create an almost unlimited amount of notes (limited only by the size of `localStorage`)
@@ -18,12 +18,12 @@ Want to suggest a feature or report a bug? Click [here](https://github.com/shivr
 
 ## How to use
  
- You can use the app either by visiting the [GitHub Pages deployment](https://shivrm.github.io/svelte-notes/) or by building it yourself.
+ You can use the app either by visiting the [GitHub Pages deployment](https://shivram.ml/notes) or by building it yourself.
 
 ### Building the app
-1. Clone the repo by running: `git clone https://github.com/shivrm/svelte-notes.git svelte-notes`
+1. Clone the repo by running: `git clone https://github.com/shivrm/notes.git notes`
 
-2. Navigate to the project directory using `cd svelte-notes`
+2. Navigate to the project directory using `cd notes`
 
 3. Switch to a branch of your liking: 
 	- `git checkout main` for the latest stable release.
@@ -67,7 +67,7 @@ Each note has two buttons on top of it:
 
 ## License
 
-Licensed under the [MIT](https://github.com/shivrm/svelte-notes/blob/main/LICENSE) License.
+Licensed under the [MIT](https://github.com/shivrm/notes/blob/main/LICENSE) License.
 
  - You can modify the code as you please, without any limitations.
  - You can use it for private and commercial purposes, without restrictions
